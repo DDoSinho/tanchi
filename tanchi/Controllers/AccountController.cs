@@ -85,9 +85,9 @@ namespace tanchi.Controllers
             }
             foreach (var error in result.Errors)
             {
-                ModelState.AddModelError(string.Empty, error.Description);
+                ModelState.AddModelError("error", error.Description);
             }
-            return BadRequest();
+            return BadRequest(ModelState);
         }
 
 

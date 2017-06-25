@@ -11,21 +11,11 @@ namespace Web.Controllers
     [Route("")]
     public class HomeController : Controller
     {
-        private readonly UserManager<User> _userManager;
-
-        public HomeController(
-            UserManager<User> userManager)
-        {
-            _userManager = userManager;
-        }
-
         [Route("")]
         [HttpGet]
         public IActionResult Index()
         {
-            var users = _userManager.Users;
-            return Ok("/swagger for API  \n" + users.ToList().ToString());
-            //return "/swagger for API";
+            return Ok("/swagger for API  \n");
         }
     }
 }

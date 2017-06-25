@@ -43,14 +43,21 @@ namespace tanchi
             services.AddIdentity<User, IdentityRole>()
                 .AddEntityFrameworkStores<TanchiDbContext>();
 
+            services.Configure<IdentityOptions>(option =>
+            {
+                option.Cookies.ApplicationCookie.LoginPath = "/Account/Login";
+                option.Password.RequireNonAlphanumeric = false;
+                option.Password.RequireUppercase = false;
+            });
+
             services.AddSingleton<IMapper>(MapperConfig.Configure());
 
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new Info { Title = "tanchi API", Version = "v1" });
-                var basePath = PlatformServices.Default.Application.ApplicationBasePath;
+               /* var basePath = PlatformServices.Default.Application.ApplicationBasePath;
                 var xmlPath = Path.Combine(basePath, "tanchiAPI.xml");
-                c.IncludeXmlComments(xmlPath);
+                c.IncludeXmlComments(xmlPath);*/
             });
 
             services.AddCors(options =>
@@ -81,6 +88,8 @@ namespace tanchi
             }
 
             app.UseCors("AllowSpecificOrigin");
+
+           
 
             app.UseIdentity();
 
