@@ -8,9 +8,10 @@ using tanchi.dal.Context;
 namespace tanchi.dal.Migrations
 {
     [DbContext(typeof(TanchiDbContext))]
-    partial class TanchiDbContextModelSnapshot : ModelSnapshot
+    [Migration("20170625130145_Init")]
+    partial class Init
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.1.2")

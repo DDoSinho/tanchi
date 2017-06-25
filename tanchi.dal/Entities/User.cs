@@ -3,20 +3,19 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace DAL.Model.Identity
+namespace tanchi.dal.Entities
 {
     public class User : IdentityUser
     {
-        public string LastName { get; set; }
+        //Father class already have fields: Id, PhoneNumber, Email, UserName, Password(hash) 
 
         public string FirstName { get; set; }
 
-        public int ZipCode { get; set; }
+        public string LastName { get; set; }
 
-        public string City { get; set; }
+        public double Rating { get; set; }
 
-        public string Street { get; set; }
+        public Address Address { get; set; }
 
-        public int StreetNumber { get; set; }
     }
 }

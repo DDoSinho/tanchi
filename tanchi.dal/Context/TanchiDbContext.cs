@@ -1,11 +1,11 @@
-﻿using DAL.Model.Identity;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using tanchi.dal.Entities;
 
-namespace DAL.Model
+namespace tanchi.dal.Context
 {
     public class TanchiDbContext : IdentityDbContext<User>
     {
@@ -13,6 +13,14 @@ namespace DAL.Model
         {
 
         }
+
+        public DbSet<Address> Address { get; set; }
+        public DbSet<Consultation> Consultation { get; set; }
+        public DbSet<PrivateLesson> PrivateLesson { get; set; }
+        public DbSet<Subject> Subject { get; set; }
+
+
+
 
 
     }
