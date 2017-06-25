@@ -14,11 +14,6 @@ namespace DAL.Model
 
         }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            optionsBuilder.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=TanchiDataBase;Trusted_Connection=True;");
-
-        }
 
     }
 }

@@ -4,6 +4,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Configuration;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using DAL.Model;
 using DAL.Model.Identity;
 
@@ -27,13 +28,23 @@ namespace tanchi
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<TanchiDbContext>();
+            services.AddDbContext<TanchiDbContext>(options =>
+                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
             services.AddIdentity<User, IdentityRole>()
-            .AddEntityFrameworkStores<TanchiDbContext>();
+                .AddEntityFrameworkStores<TanchiDbContext>();
 
-            services.AddScoped<TanchiDbContext>();
-            services.AddScoped<DbManager>();
+            services.AddCors(options =>
+            {
+                options.AddPolicy("AllowSpecificOrigin",
+                    builder =>
+                    {
+                        builder.WithOrigins("http://localhost:3000")
+                            .AllowAnyMethod()
+                            .AllowAnyHeader()
+                            .AllowCredentials();
+                    });
+            });
 
             services.AddMvc();
         }

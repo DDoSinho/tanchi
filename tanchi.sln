@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26430.12
+VisualStudioVersion = 15.0.26430.13
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Web", "tanchi\Web.csproj", "{AFED25D9-FFEB-453E-9DD9-439C6E68D227}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tanchi", "tanchi\tanchi.csproj", "{AFED25D9-FFEB-453E-9DD9-439C6E68D227}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "DAL\DAL.csproj", "{09E8A517-8FE2-4A95-8717-F3310A3C3A03}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "tanchi.dal", "tanchi.dal\tanchi.dal.csproj", "{A0ADCF51-E467-4A27-AD46-8C501706D8EF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{AFED25D9-FFEB-453E-9DD9-439C6E68D227}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AFED25D9-FFEB-453E-9DD9-439C6E68D227}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AFED25D9-FFEB-453E-9DD9-439C6E68D227}.Release|Any CPU.Build.0 = Release|Any CPU
-		{09E8A517-8FE2-4A95-8717-F3310A3C3A03}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{09E8A517-8FE2-4A95-8717-F3310A3C3A03}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{09E8A517-8FE2-4A95-8717-F3310A3C3A03}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{09E8A517-8FE2-4A95-8717-F3310A3C3A03}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A0ADCF51-E467-4A27-AD46-8C501706D8EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A0ADCF51-E467-4A27-AD46-8C501706D8EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A0ADCF51-E467-4A27-AD46-8C501706D8EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A0ADCF51-E467-4A27-AD46-8C501706D8EF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
